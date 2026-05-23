@@ -1,20 +1,16 @@
-# Context Pack
+﻿# Context Pack
 
 [中文](README.zh-CN.md)
 
-Context Pack is a local-first developer tool. It turns a development task plus a repository into a focused context package for AI coding agents.
+Context Pack can turn a development task and a repository into a focused context package for AI coding agents.
 
 It works well with Codex, Cursor, Claude Code, Copilot coding agent, and similar tools.
 
 ## Features
 
-- Finds relevant files
-- Generates an implementation plan
-- Highlights risks
-- Suggests validation commands
-- Creates an agent-ready prompt
-- Drafts a PR description
-- Outputs Markdown and JSON
+- Scans a local repository and finds task-related files
+- Generates an implementation plan, risks, and validation suggestions
+- Outputs an agent-ready prompt and Markdown report
 
 ## Local Usage
 
@@ -69,22 +65,3 @@ jobs:
         with:
           comment-pr: true
 ```
-
-## Optional AI Refinement
-
-```bash
-OPENAI_API_KEY=sk-...
-OPENAI_MODEL=gpt-4.1-mini
-```
-
-Without an API key, Context Pack still works with local heuristics.
-
-## Check
-
-```bash
-npm run check
-```
-
-## License
-
-MIT

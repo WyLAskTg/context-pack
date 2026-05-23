@@ -1,22 +1,16 @@
-# Context Pack
+﻿# Context Pack
 
 [English](README.en.md)
 
-Context Pack 是一个本地优先的开发者工具。它会根据“开发任务 + 代码仓库”，生成一份给 AI 编程助手使用的上下文包。
-
-适合配合 Codex、Cursor、Claude Code、Copilot coding agent 等工具使用。
+Context Pack 可根据开发任务和本地代码仓库，生成一份给 AI 编程助手（如Codex, Cursor, Claude, Copilot）使用的上下文包。
 
 ## 功能
 
-- 找出相关文件
-- 生成实现计划
-- 标出风险点
-- 推荐验证命令
-- 生成可复制给 AI coding agent 的 Prompt
-- 生成 PR 描述草稿
-- 输出 Markdown 和 JSON
+- 扫描本地仓库，找出和任务相关的文件
+- 生成实现计划、标记可能的风险和验证建议
+- 输出可复制给 AI coding agent 的 Prompt 和 Markdown 报告
 
-## 本地使用
+## 本地使用方法
 
 要求：
 
@@ -69,22 +63,3 @@ jobs:
         with:
           comment-pr: true
 ```
-
-## 可选 AI 增强
-
-```bash
-OPENAI_API_KEY=sk-...
-OPENAI_MODEL=gpt-4.1-mini
-```
-
-没有 API key 时，Context Pack 也能用本地启发式生成。
-
-## 检查
-
-```bash
-npm run check
-```
-
-## 许可证
-
-MIT
