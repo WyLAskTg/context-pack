@@ -1,0 +1,54 @@
+name: Context Pack
+description: Generate an AI coding-agent context pack for a repository, pull request, or issue.
+author: Context Pack contributors
+
+inputs:
+  task:
+    description: Task to generate context for. Defaults to the pull request or issue title/body when available.
+    required: false
+  repo-path:
+    description: Repository path to scan. Defaults to GITHUB_WORKSPACE.
+    required: false
+  max-files:
+    description: Maximum relevant files to include.
+    required: false
+    default: "12"
+  include-diff:
+    description: Include git diff facts when available.
+    required: false
+    default: "true"
+  output-json:
+    description: Path for the generated JSON artifact. Set to empty to skip.
+    required: false
+    default: ".context-pack/context-pack.json"
+  output-markdown:
+    description: Path for the generated Markdown artifact. Set to empty to skip.
+    required: false
+    default: ".context-pack/context-pack.md"
+  write-summary:
+    description: Append the generated pack to the GitHub Actions job summary.
+    required: false
+    default: "true"
+  comment-pr:
+    description: Create or update a pull request comment with the generated pack.
+    required: false
+    default: "false"
+  github-token:
+    description: GitHub token used for optional PR comments. Defaults to GITHUB_TOKEN.
+    required: false
+
+outputs:
+  summary:
+    description: One-line context pack summary.
+  json-path:
+    description: Path to the generated JSON file, when enabled.
+  markdown-path:
+    description: Path to the generated Markdown file, when enabled.
+
+runs:
+  using: node20
+  main: scripts/github-action.mjs
+
+branding:
+  icon: file-text
+  color: blue

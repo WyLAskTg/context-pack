@@ -1,0 +1,24 @@
+{
+  "name": "context-pack",
+  "version": "0.1.0",
+  "description": "Local-first context pack generator for AI coding agents.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "ai",
+    "developer-tools",
+    "coding-agent",
+    "context",
+    "workflow"
+  ],
+  "bin": {
+    "context-pack": "bin/context-pack.mjs"
+  },
+  "scripts": {
+    "context-pack": "node bin/context-pack.mjs",
+    "check": "node --check bin/context-pack.mjs && node --check lib/contextPack.mjs && node --check lib/renderMarkdown.mjs && node --check scripts/github-action.mjs"
+  }
+}
