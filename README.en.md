@@ -61,7 +61,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: WyLAskTg/context-pack@v1
+      - uses: WyLAskTg/ContextPack@v1
         with:
           comment-pr: true
 ```
